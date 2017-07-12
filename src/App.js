@@ -25,19 +25,19 @@ const bool_cdq = {
     h_subject : 30,
     h_space_subject_me : 30,
     h_me : 50,
-    h_space_me_others : 30,
-    h_space_between : 3,
+    h_space_me_others : 20,
+    h_space_between : 2,
     h_other : 25,
     h_space_bottom : 50,
     w_space_padding : 30,
     w_space_between : 5,
-    w_button : 170,
+    w_button : 259,
     button_radius : 15
   },
   pref: [
     {u_id:"user_1", u_name:"Name 1", u_imgpath: null, selection: true},
     {u_id:"user_2", u_name:"Name 2", u_imgpath: null, selection: true},
-    {u_id:"user_3", u_name:"Name 3", u_imgpath: null, selection: true},
+    {u_id:"user_3", u_name:"Name 3", u_imgpath: null, selection: false},
     {u_id:"user_4", u_name:"Name 4", u_imgpath: null, selection: false}
   ]
 };
@@ -56,7 +56,7 @@ const cat_cdq = {
     h_space_subject_me : 30,
     h_me : 50,
     h_space_me_others : 30,
-    h_space_between : 3,
+    h_space_between : 2,
     h_other : 25,
     h_space_bottom : 50,
     w_space_padding : 30,
