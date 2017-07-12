@@ -10,7 +10,7 @@ class CatPreference extends Component {
       preference.selection.map((each, each_index) => {
         if(each) {
           eachPref.push(
-            <g>
+            <g key={preference.u_id + "-" + each_index}>
               <rect
                 width={this.props.width}
                 height={this.props.height}
@@ -21,6 +21,7 @@ class CatPreference extends Component {
             </g>
         );
         }
+        return true;
       });
       return eachPref;
     };

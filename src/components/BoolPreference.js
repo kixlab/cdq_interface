@@ -5,7 +5,7 @@ class BoolPreference extends Component {
     const prefs = this.props.pref;
     const pref_len = prefs.length;
     const renderPref = (preference, index) => {
-      return (<rect
+      return (<rect key={preference.u_id}
           width={this.props.width}
           height={this.props.height}
           x={preference.selection ? this.props.posX + this.props.marginX : this.props.posX + this.props.marginX * 3 + this.props.width}
