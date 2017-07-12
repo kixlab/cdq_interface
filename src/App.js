@@ -46,8 +46,8 @@ const cat_cdq = {
   config: {
     criterion_name: "Types of Restaurant",
     criterion_id: "type_of_rest",
-    categories_name:["Chinese", "American", "Korean", "French"],
-    default_selection: [false, false, false, false],
+    categories_name:["Chinese", "American", "Korean", "French", "Indian"],
+    default_selection: [false, false, false, false, true],
     anonymize: false
   },
   metrics: {
@@ -65,10 +65,10 @@ const cat_cdq = {
     button_radius : 15
   },
   pref: [
-    {u_id:"user_1", u_name:"Name 1", u_imgpath: null, selection: [true, false, false, true]},
-    {u_id:"user_2", u_name:"Name 2", u_imgpath: null, selection: [true, false, true, true]},
-    {u_id:"user_3", u_name:"Name 3", u_imgpath: null, selection: [true, false, true, false]},
-    {u_id:"user_4", u_name:"Name 4", u_imgpath: null, selection: [true, true, false, true]}
+    {u_id:"user_1", u_name:"Name 1", u_imgpath: null, selection: [true, false, false, true, true]},
+    {u_id:"user_2", u_name:"Name 2", u_imgpath: null, selection: [true, false, true, true, true]},
+    {u_id:"user_3", u_name:"Name 3", u_imgpath: null, selection: [true, false, true, false, true]},
+    {u_id:"user_4", u_name:"Name 4", u_imgpath: null, selection: [true, true, false, true, true]}
   ]
 };
 
