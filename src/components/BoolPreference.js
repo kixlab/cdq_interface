@@ -9,7 +9,7 @@ class BoolPreference extends Component {
           width={this.props.width}
           height={this.props.height}
           x={preference.selection ? this.props.posX + this.props.marginX : this.props.posX + this.props.marginX * 3 + this.props.width}
-          y={this.props.posY + this.props.marginY*(2 * index + 1) + this.props.height * (index)}
+          y={this.props.posY + this.props.marginY*(index + 1) + this.props.height * (index)}
           fill={this.props.anonymize ? "#939393" : colors[index]}/>
       );
     };
@@ -17,9 +17,9 @@ class BoolPreference extends Component {
     return (
       <g>
         {this.props.pref.map(renderPref)}
-        <line x1={this.props.posX} y1={this.props.posY} x2={this.props.posX} y2={this.props.posY + this.props.marginY*2*pref_len + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
-        <line x1={this.props.posX + 2*this.props.marginX + this.props.width} y1={this.props.posY} x2={this.props.posX + 2*this.props.marginX + this.props.width} y2={this.props.posY + this.props.marginY*2*pref_len + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
-        <line x1={this.props.posX + 4*this.props.marginX + this.props.width*2} y1={this.props.posY} x2={this.props.posX + 4*this.props.marginX + this.props.width*2} y2={this.props.posY + this.props.marginY*2*pref_len + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
+        <line x1={this.props.posX} y1={this.props.posY} x2={this.props.posX} y2={this.props.posY + this.props.marginY*(pref_len + 1) + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
+        <line x1={this.props.posX + 2*this.props.marginX + this.props.width} y1={this.props.posY} x2={this.props.posX + 2*this.props.marginX + this.props.width} y2={this.props.posY + this.props.marginY*(1 + pref_len) + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
+        <line x1={this.props.posX + 4*this.props.marginX + this.props.width*2} y1={this.props.posY} x2={this.props.posX + 4*this.props.marginX + this.props.width*2} y2={this.props.posY + this.props.marginY*(1 + pref_len) + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
       </g>
     );
   }

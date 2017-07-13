@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 class CatSelector extends Component {
   render() {
+
+
     const renderCategories = (category, index) => {
       return (
         <g key={index} onClick={() => {this.props.onSelect(index)}}>

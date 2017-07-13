@@ -15,9 +15,9 @@ class CatPreference extends Component {
                 width={this.props.width}
                 height={this.props.height}
                 x={this.props.posX + this.props.marginX * (each_index*2 + 1) + this.props.width * each_index}
-                y={this.props.posY + this.props.marginY * (2 * index + 1) + this.props.height * (index)}
+                y={this.props.posY + this.props.marginY * (index + 1) + this.props.height * (index)}
                 fill={this.props.anonymize ? "#939393" : colors[index]}/>
-              <line x1={this.props.posX + this.props.marginX * (each_index + 1) *2 + this.props.width * (each_index + 1)} y1={this.props.posY} x2={this.props.posX + this.props.marginX * (each_index + 1) *2 + this.props.width * (each_index + 1)} y2={this.props.posY + this.props.marginY*2*pref_len + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
+              <line x1={this.props.posX + this.props.marginX * (each_index + 1) *2 + this.props.width * (each_index + 1)} y1={this.props.posY} x2={this.props.posX + this.props.marginX * (each_index + 1) *2 + this.props.width * (each_index + 1)} y2={this.props.posY + this.props.marginY*(1 + pref_len) + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
             </g>
         );
         }
@@ -29,7 +29,7 @@ class CatPreference extends Component {
     return (
       <g>
         {this.props.pref.map(renderPref)}
-        <line x1={this.props.posX} y1={this.props.posY} x2={this.props.posX} y2={this.props.posY + this.props.marginY*2*pref_len + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
+        <line x1={this.props.posX} y1={this.props.posY} x2={this.props.posX} y2={this.props.posY + this.props.marginY*(pref_len + 1) + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
       </g>
     );
   }
