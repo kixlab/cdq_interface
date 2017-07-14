@@ -41,7 +41,8 @@ class OrdSelector extends Component {
     return [optimal, optimal_value];
   }
 
-  mouseMove (e) {
+  mouseMove (e){
+    e.preventDefault();
     const element = this.state.activeHandler;
     const lr = this.state.activeSide;
     if(element) {
@@ -64,6 +65,7 @@ class OrdSelector extends Component {
         }
       }
     }
+    return false;
   }
 
   mouseUp () {
@@ -87,63 +89,81 @@ class OrdSelector extends Component {
     }
     document.removeEventListener('mousemove', this.mouseMove);
     document.removeEventListener('mouseup', this.mouseUp);
+    document.removeEventListener('touchmove', this.mouseMove);
+    document.removeEventListener('touchend', this.mouseUp);
+    document.removeEventListener('touchcancel', this.mouseUp);
   }
 
   render() {
-    // const renderCategories = (category, index) => {
-    //   return (
-    //     <g key={index} onClick={() => {this.props.onSelect(index)}}>
-    //       <rect rx = {this.props.buttonRadius} width={this.props.width} height={this.props.height} x={this.props.posX + this.props.width*index + this.props.spacing*index} y={this.props.posY} style={this.props.selection[index]? styles.selected.rectStyle : styles.unselected.rectStyle} />
-    //       <text x={this.props.posX + this.props.width*(index*2+1)/2 + this.props.spacing*index} y={this.props.posY + this.props.height/2} fontSize={this.props.height/2} style={this.props.selection[index]? styles.selected.textStyle : styles.unselected.textStyle}>{this.props.categories[index]}</text>
-    //     </g>
-    //   );
-    // };
     const tick_num = this.props.tickNum;
     const borders = [];
     const label_array = [];
     const max = this.props.minmax[1]? this.props.selection[1] : tick_num - 1;
     const min = this.props.minmax[0]? this.props.selection[0] : 0;
     const mouseDownLeft = (e) => {
-      const element = e.target;
-      this.setState({
-        activeHandler: element,
-        activeSide: 0
-      });
-      element.coords = {
-        x: e.pageX,
-        y: e.pageY
-      };
-      document.addEventListener('mousemove', this.mouseMove);
-      document.addEventListener('mouseup', this.mouseUp);
+      console.log(e.button)
+      if(e.button !== 2) {
+        const element = e.target;
+        this.setState({
+          activeHandler: element,
+          activeSide: 0
+        });
+        element.coords = {
+          x: e.pageX,
+          y: e.pageY
+        };
+        document.addEventListener('mousemove', this.mouseMove);
+        document.addEventListener('mouseup', this.mouseUp);
+      }
     };
     const mouseDownRight = (e) => {
+      if(e.button !== 2) {
+        const element = e.target;
+        this.setState({
+          activeHandler: element,
+          activeSide: 1
+        });
+        element.coords = {
+          x: e.pageX,
+          y: e.pageY
+        };
+        document.addEventListener('mousemove', this.mouseMove);
+        document.addEventListener('mouseup', this.mouseUp);
+      }
+    };
+    const touchDownLeft = (e) => {
+      e.preventDefault();
       const element = e.target;
       this.setState({
         activeHandler: element,
-        activeSide: 1
+        activeSide : 0
       });
       element.coords = {
         x: e.pageX,
         y: e.pageY
       };
-      document.addEventListener('mousemove', this.mouseMove);
-      document.addEventListener('mouseup', this.mouseUp);
+      document.addEventListener('touchmove', this.mouseMove);
+      document.addEventListener('touchend', this.mouseUp);
+      document.addEventListener('touchcancel', this.mouseUp);
+      return false;
     };
 
-
-      //console.log(evt.pageX);
-      //console.log(evt.pageY);
-      //this.setState({mousedown : true});
-      //console.log(element.getBoundingClientRect());
-      //let p = svg.createSVGPoint();
-      //p.x = evt.clientX;
-      //p.y = evt.clientY;
-      //var m = element.getScreenCTM();
-      //p = p.matrixTransform(m.inverse());
-      /*this.setState({
-        offsetX : p.x - parseInt(element.getAttribute("x")),
-        offsetY : p.y - parseInt(element.getAttribute("y"))
-      });*/
+    const touchDownRight = (e) => {
+      e.preventDefault();
+      const element = e.target;
+      this.setState({
+        activeHandler: element,
+        activeSide : 1
+      });
+      element.coords = {
+        x: e.pageX,
+        y: e.pageY
+      };
+      document.addEventListener('touchmove', this.mouseMove);
+      document.addEventListener('touchend', this.mouseUp);
+      document.addEventListener('touchcancel', this.mouseUp);
+      return false;
+    };
     let i = 0;
 
     for(i = 0; i < tick_num; i++) {
@@ -169,8 +189,8 @@ class OrdSelector extends Component {
         {label_array}
         <rect rx={this.props.barRadius} x={this.props.posX - this.props.metrics.w_space_padding/2} y={this.props.posY + this.props.metrics.h_txt + this.props.metrics.h_tick + this.props.metrics.h_space_between} width={(this.props.tickNum - 1)*this.props.metrics.w_between_tick + this.props.metrics.w_space_padding} height={this.props.height} style={styles.barStyle}/>
         <rect x={this.state.left + this.props.metrics.handle_width/2} y={this.props.posY + this.props.metrics.h_txt + this.props.metrics.h_tick + 2 + this.props.metrics.h_space_between} width={this.state.right - this.state.left} height={this.props.height - 4} style={styles.rangeStyle} />
-        <rect onMouseDown={mouseDownLeft} style= {styles.handleStyle} rx={this.props.handleRadius} width={this.props.minmax[0]? this.props.metrics.handle_width : 0} height={this.props.height + 2*this.props.metrics.h_space_between} x={this.state.left} y={this.props.posY + this.props.metrics.h_txt + this.props.metrics.h_tick} />
-        <rect onMouseDown={mouseDownRight} style= {styles.handleStyle} rx={this.props.handleRadius} width={this.props.minmax[1]? this.props.metrics.handle_width : 0} height={this.props.height + 2*this.props.metrics.h_space_between} x={this.state.right} y={this.props.posY + this.props.metrics.h_txt + this.props.metrics.h_tick} />
+        <rect onTouchStart={touchDownLeft} onMouseDown={mouseDownLeft} style= {styles.handleStyle} rx={this.props.handleRadius} width={this.props.minmax[0]? this.props.metrics.handle_width : 0} height={this.props.height + 2*this.props.metrics.h_space_between} x={this.state.left} y={this.props.posY + this.props.metrics.h_txt + this.props.metrics.h_tick} />
+        <rect onTouchStart={touchDownRight} onMouseDown={mouseDownRight} style= {styles.handleStyle} rx={this.props.handleRadius} width={this.props.minmax[1]? this.props.metrics.handle_width : 0} height={this.props.height + 2*this.props.metrics.h_space_between} x={this.state.right} y={this.props.posY + this.props.metrics.h_txt + this.props.metrics.h_tick} />
       </g>
     );
   }

@@ -26,10 +26,20 @@ class CatPreference extends Component {
       return eachPref;
     };
 
+    const borders = [];
+
+    for(let i = 0; i < this.props.catNum; i++) {
+      borders.push(
+        (
+        <line key={i} x1={this.props.posX + this.props.marginX * (i) *2 + this.props.width * (i)} y1={this.props.posY} x2={this.props.posX + this.props.marginX * (i) *2 + this.props.width * (i)} y2={this.props.posY + this.props.marginY*(pref_len + 1) + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
+        )
+      );
+    }
+
     return (
       <g>
+        {borders}
         {this.props.pref.map(renderPref)}
-        <line x1={this.props.posX} y1={this.props.posY} x2={this.props.posX} y2={this.props.posY + this.props.marginY*(pref_len + 1) + this.props.height*pref_len} style={{stroke:"#AAAAAA", strokeWidth:2, strokeDasharray:"3,3"}} />
       </g>
     );
   }
