@@ -10,7 +10,8 @@ class BoolPreference extends Component {
           height={this.props.height}
           x={preference.selection ? this.props.posX + this.props.marginX : this.props.posX + this.props.marginX * 3 + this.props.width}
           y={this.props.posY + this.props.marginY*(index + 1) + this.props.height * (index)}
-          fill={this.props.anonymize ? "#939393" : colors[index]}/>
+          fill={this.props.anonymize ? "#939393" : colors[index]}
+          opacity={prefs[index].selection === undefined ? 0.25 : 1}/>
       );
     };
 
