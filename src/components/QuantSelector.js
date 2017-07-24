@@ -49,7 +49,6 @@ class OrdSelector extends Component {
     const lr = this.state.activeSide;
     if(element) {
       const xDiff = element.coords.x - e.pageX;
-      const yDiff = element.coords.y - e.pageY;
       element.coords.x = e.pageX;
       element.coords.y = e.pageY;
       if (lr === 0) {

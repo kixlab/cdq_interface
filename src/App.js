@@ -45,19 +45,11 @@ const bool_cdq = {
     {u_id:"user_4", u_name:"Name 4", u_imgpath: null}
   ],
   handler: {
-    socketUrl: 'http://localhost:17322',
     onSelectChange: function (selection){
-      socket.emit('selection0', selection);
+
     },
     socketHandler: function (setPreference, initialSelection) {
-      socket.emit('selection0', initialSelection);
-      socket.emit('request0');
-      socket.on('preference0', (newSelection) => {
-        setPreference(newSelection.u_id, newSelection.selection);
-      });
-      setInterval(() => {
-        socket.emit('request0');
-      }, 10000);
+
     }
   }
 };
@@ -91,19 +83,10 @@ const cat_cdq = {
     {u_id:"user_4", u_name:"Name 4", u_imgpath: null}
   ],
   handler: {
-    socketUrl: 'http://localhost:17322',
     onSelectChange: function (selection){
-      socket1.emit('selection1', selection);
     },
     socketHandler: function (setPreference, initialSelection) {
-      socket1.emit('selection1', initialSelection);
-      socket1.emit('request1');
-      socket1.on('preference1', (newSelection) => {
-        setPreference(newSelection.u_id, newSelection.selection);
-      });
-      setInterval(() => {
-        socket1.emit('request1');
-      }, 10000);
+
     }
   }
 };
@@ -142,19 +125,10 @@ const ord_cdq = {
     {u_id:"user_4", u_name:"Name 4", u_imgpath: null}
   ],
   handler: {
-    socketUrl: 'http://localhost:17322',
     onSelectChange: function (selection){
-      socket2.emit('selection2', selection);
     },
     socketHandler: function (setPreference, initialSelection) {
-      socket2.emit('selection2', initialSelection);
-      socket2.emit('request2');
-      socket2.on('preference2', (newSelection) => {
-        setPreference(newSelection.u_id, newSelection.selection);
-      });
-      setInterval(() => {
-        socket2.emit('request2');
-      }, 10000);
+
     }
   }
 };
@@ -194,19 +168,10 @@ const  quant_cdq = {
     {u_id:"user_4", u_name:"Name 4", u_imgpath: null}
   ],
   handler: {
-    socketUrl: 'http://localhost:17322',
     onSelectChange: function (selection){
-      socket3.emit('selection3', selection);
     },
     socketHandler: function (setPreference, initialSelection) {
-      socket3.emit('selection3', initialSelection);
-      socket3.emit('request3');
-      socket3.on('preference3', (newSelection) => {
-        setPreference(newSelection.u_id, newSelection.selection);
-      });
-      setInterval(() => {
-        socket3.emit('request3');
-      }, 10000);
+      
     }
   }
 };

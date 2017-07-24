@@ -47,7 +47,6 @@ class OrdSelector extends Component {
     const lr = this.state.activeSide;
     if(element) {
       const xDiff = element.coords.x - e.pageX;
-      const yDiff = element.coords.y - e.pageY;
       element.coords.x = e.pageX;
       element.coords.y = e.pageY;
 
@@ -98,10 +97,8 @@ class OrdSelector extends Component {
     const tick_num = this.props.tickNum;
     const borders = [];
     const label_array = [];
-    const max = this.props.minmax[1]? this.props.selection[1] : tick_num - 1;
-    const min = this.props.minmax[0]? this.props.selection[0] : 0;
     const mouseDownLeft = (e) => {
-      console.log(e.button)
+      console.log(e.button);
       if(e.button !== 2) {
         const element = e.target;
         this.setState({

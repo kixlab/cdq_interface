@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9de76113-7c93-40c3-91c9-82d8ce0a5d51" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/BoolCDQ.js" afterPath="$PROJECT_DIR$/src/components/BoolCDQ.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/CatCDQ.js" afterPath="$PROJECT_DIR$/src/components/CatCDQ.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/CatPreference.js" afterPath="$PROJECT_DIR$/src/components/CatPreference.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/OrdCDQ.js" afterPath="$PROJECT_DIR$/src/components/OrdCDQ.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/OrdPreference.js" afterPath="$PROJECT_DIR$/src/components/OrdPreference.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/QuantCDQ.js" afterPath="$PROJECT_DIR$/src/components/QuantCDQ.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/QuantPreference.js" afterPath="$PROJECT_DIR$/src/components/QuantPreference.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.css" afterPath="$PROJECT_DIR$/src/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/OrdSelector.js" afterPath="$PROJECT_DIR$/src/components/OrdSelector.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/QuantSelector.js" afterPath="$PROJECT_DIR$/src/components/QuantSelector.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -27,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+            <state relative-caret-position="2595">
+              <caret line="173" column="6" lean-forward="false" selection-start-line="173" selection-start-column="6" selection-end-line="173" selection-end-column="6" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -43,7 +36,19 @@
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QuantSelector.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/QuantSelector.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="337">
+              <caret line="50" column="47" lean-forward="false" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -113,21 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrdCDQ.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/OrdCDQ.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="68" column="23" lean-forward="true" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrdSelector.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OrdSelector.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/OrdSelector.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="829">
-              <caret line="166" column="4" lean-forward="false" selection-start-line="166" selection-start-column="4" selection-end-line="174" selection-end-column="5" />
+            <state relative-caret-position="1545">
+              <caret line="103" column="23" lean-forward="true" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -159,6 +154,8 @@
       <find>text</find>
       <find>root</find>
       <find>/2</find>
+      <find>yDiff</find>
+      <find>yD</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -169,14 +166,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/components/BoolSelector.js" />
-        <option value="$PROJECT_DIR$/src/components/OrdSelector.js" />
         <option value="$PROJECT_DIR$/src/components/CatSelector.js" />
         <option value="$PROJECT_DIR$/build/static/js/main.22b8d775.js" />
         <option value="$PROJECT_DIR$/src/components/Subject.js" />
         <option value="$PROJECT_DIR$/src/components/BoolPreference.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/build/service-worker.js" />
-        <option value="$PROJECT_DIR$/src/components/QuantSelector.js" />
         <option value="$PROJECT_DIR$/build/index.html" />
         <option value="$PROJECT_DIR$/build/static/js/main.bb6a01a6.js" />
         <option value="$PROJECT_DIR$/src/components/CatCDQ.js" />
@@ -187,8 +182,10 @@
         <option value="$PROJECT_DIR$/src/components/QuantPreference.js" />
         <option value="$PROJECT_DIR$/src/components/CatPreference.js" />
         <option value="$PROJECT_DIR$/src/index.css" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/components/QuantSelector.js" />
+        <option value="$PROJECT_DIR$/src/components/OrdSelector.js" />
       </list>
     </option>
   </component>
@@ -423,7 +420,7 @@
       <workItem from="1500523322353" duration="734000" />
       <workItem from="1500530774543" duration="6000" />
       <workItem from="1500615970968" duration="5000" />
-      <workItem from="1500863925561" duration="4196000" />
+      <workItem from="1500863925561" duration="4429000" />
     </task>
     <task id="LOCAL-00001" summary="Layout of Boolean based CDQ is completed. (React Based)">
       <created>1499859818117</created>
@@ -443,7 +440,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74541000" />
+    <option name="totallyTimeSpent" value="74774000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="2560" height="1440" extended-state="0" />
@@ -748,22 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/OrdSelector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="829">
-          <caret line="166" column="4" lean-forward="false" selection-start-line="166" selection-start-column="4" selection-end-line="174" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/QuantSelector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="80" column="28" lean-forward="true" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/BoolPreference.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
@@ -832,21 +813,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2595">
+          <caret line="173" column="6" lean-forward="false" selection-start-line="173" selection-start-column="6" selection-end-line="173" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/QuantSelector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="50" column="47" lean-forward="false" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/components/OrdSelector.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1545">
+          <caret line="103" column="23" lean-forward="true" selection-start-line="103" selection-start-column="23" selection-end-line="103" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
