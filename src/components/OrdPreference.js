@@ -5,16 +5,18 @@ class OrdPreference extends Component {
     const prefs = this.props.pref;
     const pref_len = prefs.length;
     const tick_num = this.props.tickNum;
+
     const renderPref = (preference, index) => {
-      const max = preference.selection[1];
-      const min = preference.selection[0];
+      const max = preference.selection? preference.selection[1] : tick_num - 1;
+      const min = preference.selection? preference.selection[0] : tick_num - 2;
       return (
-          <rect key={index}
-            width={this.props.width * (max - min)}
-            height={this.props.height}
-            x={this.props.posX + this.props.width * min}
-            y={this.props.posY + this.props.marginY * (index + 1) + this.props.height * (index)}
-            fill={this.props.anonymize ? "#939393" : colors[index]}/>
+        <rect key={index}
+              width={this.props.width * (max - min)}
+              height={this.props.height}
+              x={this.props.posX + this.props.width * min}
+              y={this.props.posY + this.props.marginY * (index + 1) + this.props.height * (index)}
+              fill={this.props.anonymize ? "#939393" : colors[index]}
+              opacity={prefs[index].selection === undefined ? 0.25 : 1}/>
       );
     };
 

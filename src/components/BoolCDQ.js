@@ -57,7 +57,7 @@ class BoolCDQ extends Component {
           <svg width={w_space_padding*2 + w_space_between*4 + w_button*2} height={h_space_top + h_space_bottom + h_space_between*(prefs.length + 1) + h_other*(prefs.length) + h_space_me_others + h_me + h_space_subject_me + h_subject}>
               <Subject title={this.props.config.criterion_name} posX={w_space_padding} posY={h_space_top} fontSize={h_subject} />
               <BoolSelector buttonRadius={button_radius} posX={w_space_padding + w_space_between} posY={h_space_top + h_subject + h_space_subject_me} width={w_button} height={h_me} spacing={w_space_between*2} selection={this.state.selection} onSelect={this.handleSelect} />
-              <BoolPreference posX={w_space_padding} posY={h_space_top + h_subject + h_space_subject_me + h_me + h_space_me_others + h_space_between} marginX={w_space_between} marginY={h_space_between} width={w_button} height={h_other} anonymize={this.props.config.anonymize} pref={this.state.pref} />
+              <BoolPreference posX={w_space_padding} posY={h_space_top + h_subject + h_space_subject_me + h_me + h_space_me_others + h_space_between} marginX={w_space_between} marginY={h_space_between} width={w_button} height={h_other} anonymize={this.props.config.anonymize} pref={prefs} />
           </svg>
         )
     }

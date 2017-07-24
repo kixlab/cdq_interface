@@ -7,17 +7,34 @@ class CatCDQ extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selection: this.props.config.default_selection
+      selection: this.props.config.default_selection,
+      pref: this.props.pref
     };
     this.handleSelect = this.handleSelect.bind(this);
+    this.setPreference = this.setPreference.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.handler.socketHandler(this.setPreference, this.state.selection);
   }
 
   handleSelect(index) {
     this.setState((prevState) => {
       const new_selection = prevState.selection;
       new_selection[index] = !new_selection[index];
-      return {selection: new_selection }
+      this.props.handler.onSelectChange(new_selection);
+      return { selection: new_selection }
     });
+  }
+
+  setPreference(uid, selection) {
+    const oldPref = this.state.pref;
+    for(let i = 0; i < oldPref.length; i++) {
+      if(oldPref[i].u_id === uid) {
+        oldPref[i].selection = selection;
+        this.setState({pref : oldPref});
+      }
+    }
   }
 
   render() {
@@ -37,14 +54,14 @@ class CatCDQ extends Component {
     } = this.props.metrics;
 
     const categories = this.props.config.categories_name;
-    const prefs = this.props.pref;
+    const prefs = this.state.pref;
     return (
       <svg
         width={w_space_padding*2 + w_space_between*categories.length*2 + w_button*categories.length}
         height={h_space_top + h_space_bottom + h_space_between*(prefs.length + 1) + h_other*prefs.length + h_space_me_others + h_me + h_space_subject_me + h_subject}>
         <Subject title={this.props.config.criterion_name} posX={w_space_padding} posY={h_space_top} fontSize={h_subject} />
         <CatSelector buttonRadius={button_radius} categories={categories} posX={w_space_padding + w_space_between} posY={h_space_top + h_subject + h_space_subject_me} width={w_button} height={h_me} spacing={w_space_between*2} selection={this.state.selection} onSelect={this.handleSelect} />
-        <CatPreference catNum={categories.length} posX={w_space_padding} posY={h_space_top + h_subject + h_space_subject_me + h_me + h_space_me_others + h_space_between} marginX={w_space_between} marginY={h_space_between} width={w_button} height={h_other} anonymize={this.props.config.anonymize} pref={this.props.pref} />
+        <CatPreference catNum={categories.length} posX={w_space_padding} posY={h_space_top + h_subject + h_space_subject_me + h_me + h_space_me_others + h_space_between} marginX={w_space_between} marginY={h_space_between} width={w_button} height={h_other} anonymize={this.props.config.anonymize} pref={prefs} />
       </svg>
     )
   }
