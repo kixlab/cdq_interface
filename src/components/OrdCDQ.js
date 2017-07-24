@@ -34,7 +34,6 @@ class OrdCDQ extends Component {
   }
 
   render() {
-    console.log(this.state.selection);
     const {
       h_space_top,
       h_subject,

@@ -36,8 +36,6 @@ class OrdSelector extends Component {
       if(Math.abs(point - current) < Math.abs(optimal - current) && point > this.state.left) {
         optimal = point;
         optimal_value = this.props.range[0] + i*this.props.interval;
-        console.log(this.props.interval);
-        console.log(this.props.range[0]);
       }
     }
     return [optimal, parseFloat(parseFloat(optimal_value).toPrecision(4))];
@@ -79,7 +77,6 @@ class OrdSelector extends Component {
       let selection = this.props.selection;
       selection[0] = opt[1];
       this.props.onSelect(selection);
-      console.log(selection);
     } else if(lr === 1) {
       const opt = this.getOptimalPointRight();
       this.setState({
@@ -88,7 +85,6 @@ class OrdSelector extends Component {
       let selection = this.props.selection;
       selection[1] = opt[1];
       this.props.onSelect(selection);
-      console.log(selection);
     }
     document.removeEventListener('mousemove', this.mouseMove);
     document.removeEventListener('mouseup', this.mouseUp);
@@ -99,7 +95,6 @@ class OrdSelector extends Component {
 
   render() {
     const mouseDownLeft = (e) => {
-      console.log(e.button)
       if(e.button !== 2) {
         const element = e.target;
         this.setState({

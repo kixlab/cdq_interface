@@ -98,7 +98,6 @@ class OrdSelector extends Component {
     const borders = [];
     const label_array = [];
     const mouseDownLeft = (e) => {
-      console.log(e.button);
       if(e.button !== 2) {
         const element = e.target;
         this.setState({
